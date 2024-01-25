@@ -89,6 +89,7 @@ fabric.properties
 # .idea/misc.xml
 # *.ipr
 
+omg.iml
 # Sonarlint plugin
 # https://plugins.jetbrains.com/plugin/7973-sonarlint
 .idea/**/sonarlint/
