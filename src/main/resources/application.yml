@@ -1,0 +1,9 @@
+api:
+  nexon:
+    maplestorym:
+      base_url: ${MAPLESTORYM_BASE_URL}
+      header_key: ${MAPLESTORYM_HEADER_KEY}
+      header_value: ${MAPLESTORYM_HEADER_VALUE}
+      ocid_api_uri: ${MAPLESTORYM_OCID_API_URI}
+      basic_api_uri: ${MAPLESTORYM_BASIC_API_URI}
+      item_api_uri: ${MAPLESTORYM_ITEM_API_URI}
