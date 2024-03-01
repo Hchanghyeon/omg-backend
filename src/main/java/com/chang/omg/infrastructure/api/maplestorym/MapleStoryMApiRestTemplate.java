@@ -8,9 +8,11 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.chang.omg.infrastructure.config.property.MapleStoryMProperties;
+import com.chang.omg.infrastructure.domain.maplestorym.Character;
 import com.chang.omg.infrastructure.domain.maplestorym.CharacterBasic;
+import com.chang.omg.infrastructure.domain.maplestorym.CharacterGuild;
 import com.chang.omg.infrastructure.domain.maplestorym.CharacterItemEquipment;
-import com.chang.omg.infrastructure.domain.maplestorym.Ocid;
+import com.chang.omg.infrastructure.domain.maplestorym.CharacterStat;
 
 import lombok.RequiredArgsConstructor;
 
@@ -21,12 +23,12 @@ public class MapleStoryMApiRestTemplate implements MapleStoryMApi {
     private final RestTemplate restTemplate;
     private final MapleStoryMProperties mapleStoryMProperties;
 
-    public Ocid getCharacterOcid(final String characterName, final String worldName) {
+    public Character getCharacterOcid(final String characterName, final String worldName) {
         return restTemplate.exchange(
                         createOcidApiUri(characterName, worldName),
                         HttpMethod.GET,
                         new HttpEntity<>(createHttpHeaders()),
-                        Ocid.class)
+                        Character.class)
                 .getBody();
     }
 
@@ -40,6 +42,7 @@ public class MapleStoryMApiRestTemplate implements MapleStoryMApi {
                 .toUriString();
     }
 
+    @Override
     public CharacterBasic getCharacterBasic(final String ocid) {
         return restTemplate.exchange(
                         createApiUrl(ocid, mapleStoryMProperties.getBasicApiUri()),
@@ -49,12 +52,33 @@ public class MapleStoryMApiRestTemplate implements MapleStoryMApi {
                 .getBody();
     }
 
+    @Override
     public CharacterItemEquipment getCharacterItem(final String ocid) {
         return restTemplate.exchange(
                         createApiUrl(ocid, mapleStoryMProperties.getItemApiUri()),
                         HttpMethod.GET,
                         new HttpEntity<>(createHttpHeaders()),
                         CharacterItemEquipment.class)
+                .getBody();
+    }
+
+    @Override
+    public CharacterStat getCharacterStat(final String ocid) {
+        return restTemplate.exchange(
+                        createApiUrl(ocid, mapleStoryMProperties.getStatApiUri()),
+                        HttpMethod.GET,
+                        new HttpEntity<>(createHttpHeaders()),
+                        CharacterStat.class)
+                .getBody();
+    }
+
+    @Override
+    public CharacterGuild getCharacterGuild(final String ocid) {
+        return restTemplate.exchange(
+                        createApiUrl(ocid, mapleStoryMProperties.getGuildApiUri()),
+                        HttpMethod.GET,
+                        new HttpEntity<>(createHttpHeaders()),
+                        CharacterGuild.class)
                 .getBody();
     }
 

@@ -3,9 +3,11 @@ package com.chang.omg.application.game;
 import org.springframework.stereotype.Service;
 
 import com.chang.omg.infrastructure.api.maplestorym.MapleStoryMApi;
+import com.chang.omg.infrastructure.domain.maplestorym.Character;
 import com.chang.omg.infrastructure.domain.maplestorym.CharacterBasic;
+import com.chang.omg.infrastructure.domain.maplestorym.CharacterGuild;
 import com.chang.omg.infrastructure.domain.maplestorym.CharacterItemEquipment;
-import com.chang.omg.infrastructure.domain.maplestorym.Ocid;
+import com.chang.omg.infrastructure.domain.maplestorym.CharacterStat;
 import com.chang.omg.infrastructure.dto.MapleStoryMCharacterInfoResponse;
 
 import lombok.RequiredArgsConstructor;
@@ -20,10 +22,17 @@ public class GameService {
             final String characterName,
             final String worldName
     ) {
-        final Ocid ocid = mapleStoryMApi.getCharacterOcid(characterName, worldName);
-        final CharacterBasic characterBasic = mapleStoryMApi.getCharacterBasic(ocid.ocid());
-        final CharacterItemEquipment characterItemEquipment = mapleStoryMApi.getCharacterItem(ocid.ocid());
+        final Character character = mapleStoryMApi.getCharacterOcid(characterName, worldName);
+        final CharacterBasic characterBasic = mapleStoryMApi.getCharacterBasic(character.ocid());
+        final CharacterItemEquipment characterItemEquipment = mapleStoryMApi.getCharacterItem(character.ocid());
+        final CharacterStat characterStat = mapleStoryMApi.getCharacterStat(character.ocid());
+        final CharacterGuild characterGuild = mapleStoryMApi.getCharacterGuild(character.ocid());
 
-        return MapleStoryMCharacterInfoResponse.of(characterBasic, characterItemEquipment);
+        return MapleStoryMCharacterInfoResponse.of(
+                characterBasic,
+                characterItemEquipment,
+                characterStat,
+                characterGuild
+        );
     }
 }

@@ -16,4 +16,6 @@ public class MapleStoryMProperties {
     private final String ocidApiUri;
     private final String basicApiUri;
     private final String itemApiUri;
+    private final String statApiUri;
+    private final String guildApiUri;
 }
