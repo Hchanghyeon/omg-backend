@@ -2,13 +2,13 @@ package com.chang.omg.application.game;
 
 import org.springframework.stereotype.Service;
 
+import com.chang.omg.domain.game.maplestorym.Character;
+import com.chang.omg.domain.game.maplestorym.CharacterBasic;
+import com.chang.omg.domain.game.maplestorym.CharacterGuild;
+import com.chang.omg.domain.game.maplestorym.CharacterItemEquipment;
+import com.chang.omg.domain.game.maplestorym.CharacterStat;
 import com.chang.omg.infrastructure.api.maplestorym.MapleStoryMApi;
-import com.chang.omg.infrastructure.domain.maplestorym.Character;
-import com.chang.omg.infrastructure.domain.maplestorym.CharacterBasic;
-import com.chang.omg.infrastructure.domain.maplestorym.CharacterGuild;
-import com.chang.omg.infrastructure.domain.maplestorym.CharacterItemEquipment;
-import com.chang.omg.infrastructure.domain.maplestorym.CharacterStat;
-import com.chang.omg.infrastructure.dto.MapleStoryMCharacterInfoResponse;
+import com.chang.omg.presentation.game.dto.MapleStoryMCharacterInfoResponse;
 
 import lombok.RequiredArgsConstructor;
 

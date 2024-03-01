@@ -1,10 +1,10 @@
 package com.chang.omg.infrastructure.api.maplestorym;
 
-import com.chang.omg.infrastructure.domain.maplestorym.Character;
-import com.chang.omg.infrastructure.domain.maplestorym.CharacterBasic;
-import com.chang.omg.infrastructure.domain.maplestorym.CharacterGuild;
-import com.chang.omg.infrastructure.domain.maplestorym.CharacterItemEquipment;
-import com.chang.omg.infrastructure.domain.maplestorym.CharacterStat;
+import com.chang.omg.domain.game.maplestorym.Character;
+import com.chang.omg.domain.game.maplestorym.CharacterBasic;
+import com.chang.omg.domain.game.maplestorym.CharacterGuild;
+import com.chang.omg.domain.game.maplestorym.CharacterItemEquipment;
+import com.chang.omg.domain.game.maplestorym.CharacterStat;
 
 public interface MapleStoryMApi {
 
