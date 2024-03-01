@@ -7,12 +7,12 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import com.chang.omg.domain.game.maplestorym.Character;
+import com.chang.omg.domain.game.maplestorym.CharacterBasic;
+import com.chang.omg.domain.game.maplestorym.CharacterGuild;
+import com.chang.omg.domain.game.maplestorym.CharacterItemEquipment;
+import com.chang.omg.domain.game.maplestorym.CharacterStat;
 import com.chang.omg.infrastructure.config.property.MapleStoryMProperties;
-import com.chang.omg.infrastructure.domain.maplestorym.Character;
-import com.chang.omg.infrastructure.domain.maplestorym.CharacterBasic;
-import com.chang.omg.infrastructure.domain.maplestorym.CharacterGuild;
-import com.chang.omg.infrastructure.domain.maplestorym.CharacterItemEquipment;
-import com.chang.omg.infrastructure.domain.maplestorym.CharacterStat;
 
 import lombok.RequiredArgsConstructor;
 

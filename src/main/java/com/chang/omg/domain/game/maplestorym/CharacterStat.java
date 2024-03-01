@@ -1,4 +1,4 @@
-package com.chang.omg.infrastructure.domain.maplestorym;
+package com.chang.omg.domain.game.maplestorym;
 
 import java.util.List;
 

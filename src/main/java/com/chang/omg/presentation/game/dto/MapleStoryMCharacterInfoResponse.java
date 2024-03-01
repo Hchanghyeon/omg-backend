@@ -1,9 +1,9 @@
-package com.chang.omg.infrastructure.dto;
+package com.chang.omg.presentation.game.dto;
 
-import com.chang.omg.infrastructure.domain.maplestorym.CharacterBasic;
-import com.chang.omg.infrastructure.domain.maplestorym.CharacterGuild;
-import com.chang.omg.infrastructure.domain.maplestorym.CharacterItemEquipment;
-import com.chang.omg.infrastructure.domain.maplestorym.CharacterStat;
+import com.chang.omg.domain.game.maplestorym.CharacterBasic;
+import com.chang.omg.domain.game.maplestorym.CharacterGuild;
+import com.chang.omg.domain.game.maplestorym.CharacterItemEquipment;
+import com.chang.omg.domain.game.maplestorym.CharacterStat;
 
 public record MapleStoryMCharacterInfoResponse(
         CharacterBasic characterBasic,

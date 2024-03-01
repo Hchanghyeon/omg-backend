@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.chang.omg.application.game.GameService;
-import com.chang.omg.infrastructure.dto.MapleStoryMCharacterInfoResponse;
+import com.chang.omg.presentation.game.dto.MapleStoryMCharacterInfoResponse;
 
 import lombok.RequiredArgsConstructor;
 
