@@ -28,6 +28,7 @@ jobs:
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.NAS_HOST }}
+          port: ${{ secrets.NAS_PORT }}
           username: ${{ secrets.NAS_USERNAME }}
           password: ${{ secrets.NAS_PASSWORD }}
           source: "build/libs/*.jar"
@@ -37,6 +38,7 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.NAS_HOST }}
+          port: ${{ secrets.NAS_PORT }}
           username: ${{ secrets.NAS_USERNAME }}
           password: ${{ secrets.NAS_PASSWORD }}
           script: |
