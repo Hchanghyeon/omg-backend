@@ -43,4 +43,4 @@ jobs:
           password: ${{ secrets.NAS_PASSWORD }}
           script: |
             cd /root/omg/build/libs
-            java -jar *.jar
+            nohub java -jar *.jar
