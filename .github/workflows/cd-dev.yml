@@ -42,5 +42,5 @@ jobs:
           username: ${{ secrets.NAS_USERNAME }}
           password: ${{ secrets.NAS_PASSWORD }}
           script: |
-            cd /root/omg/
+            cd /root/omg/build/libs
             java -jar *.jar
