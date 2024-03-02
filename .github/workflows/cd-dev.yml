@@ -1,0 +1,44 @@
+name: cd-dev
+
+on:
+  push:
+    branches: [ "dev" ]
+
+jobs:
+  deploy-to-ec2:
+    environment: dev
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Github Repository Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Build with Gradle
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: build
+
+      - name: Sending build file to NAS
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.NAS_HOST }}
+          username: ${{ secrets.NAS_USERNAME }}
+          password: ${{ secrets.NAS_PASSWORD }}
+          source: "build/libs/*.jar"
+          target: "/root/omg/"
+
+      - name: SSH to NAS
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.NAS_HOST }}
+          username: ${{ secrets.NAS_USERNAME }}
+          password: ${{ secrets.NAS_PASSWORD }}
+          script: |
+            cd /root/omg/
+            java -jar *.jar
