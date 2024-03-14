@@ -43,5 +43,5 @@ jobs:
           password: ${{ secrets.NAS_PASSWORD }}
           script: |
             cd /root/omg
-            nohup ./process.sh &
+            ./process.sh
             
