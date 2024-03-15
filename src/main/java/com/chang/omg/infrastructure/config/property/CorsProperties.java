@@ -10,5 +10,5 @@ import lombok.RequiredArgsConstructor;
 @ConfigurationProperties(prefix = "cors")
 public class CorsProperties {
 
-    private final String local;
+    private final String[] urls;
 }

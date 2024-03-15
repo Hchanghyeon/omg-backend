@@ -10,4 +10,6 @@ api:
       stat_api_uri: ${MAPLESTORYM_STAT_API_URI}
       guild_api_uri: ${MAPLESTORYM_GUILD_API_URI}
 cors:
-  local: http://localhost:3000
+  urls:
+    - http://localhost:3000
+    - ${CLIENT_URL}
