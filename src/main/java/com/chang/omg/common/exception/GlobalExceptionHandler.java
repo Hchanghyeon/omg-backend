@@ -12,11 +12,27 @@ import lombok.extern.slf4j.Slf4j;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
+    @ExceptionHandler(ApiException.class)
+    public ResponseEntity<ErrorResponse> handleApiException(final ApiException apiException) {
+        log.error("외부 API 요청 에러: {}", apiException.getMessage(), apiException);
+
+        return ResponseEntity.status(apiException.getExceptionCode().getStatus())
+                .body(new ErrorResponse(
+                                apiException.getExceptionCode().getCode(),
+                                apiException.getExceptionCode().getMessage()
+                        )
+                );
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleException(final Exception exception) {
         log.error("{}", GLOBAL_INTERNAL_SERVER_ERROR, exception);
 
         return ResponseEntity.status(GLOBAL_INTERNAL_SERVER_ERROR.getStatus())
-                .body(new ErrorResponse(GLOBAL_INTERNAL_SERVER_ERROR.getCode()));
+                .body(new ErrorResponse(
+                                GLOBAL_INTERNAL_SERVER_ERROR.getCode(),
+                                GLOBAL_INTERNAL_SERVER_ERROR.getMessage()
+                        )
+                );
     }
 }
