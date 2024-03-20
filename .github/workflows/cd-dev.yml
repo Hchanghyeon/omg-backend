@@ -8,6 +8,15 @@ jobs:
   deploy-to-ec2:
     environment: dev
     runs-on: ubuntu-latest
+    env:
+      MAPLESTORYM_BASE_URL: ${{ secrets.MAPLESTORYM_BASE_URL }}
+      MAPLESTORYM_HEADER_KEY: ${{ secrets.MAPLESTORYM_HEADER_KEY }}
+      MAPLESTORYM_HEADER_VALUE: ${{ secrets.MAPLESTORYM_HEADER_VALUE }}
+      MAPLESTORYM_OCID_API_URI: ${{ secrets.MAPLESTORYM_OCID_API_URI }}
+      MAPLESTORYM_BASIC_API_URI: ${{ secrets.MAPLESTORYM_BASIC_API_URI }}
+      MAPLESTORYM_ITEM_API_URI: ${{ secrets.MAPLESTORYM_ITEM_API_URI }}
+      MAPLESTORYM_STAT_API_URI: ${{ secrets.MAPLESTORYM_STAT_API_URI }}
+      MAPLESTORYM_GUILD_API_URI: ${{ secrets.MAPLESTORYM_GUILD_API_URI }}
 
     steps:
       - name: Github Repository Checkout
