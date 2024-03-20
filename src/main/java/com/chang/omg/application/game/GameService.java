@@ -1,13 +1,17 @@
 package com.chang.omg.application.game;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import com.chang.omg.domain.game.maplestorym.Character;
-import com.chang.omg.domain.game.maplestorym.CharacterBasic;
-import com.chang.omg.domain.game.maplestorym.CharacterGuild;
-import com.chang.omg.domain.game.maplestorym.CharacterItemEquipment;
-import com.chang.omg.domain.game.maplestorym.CharacterStat;
+import com.chang.omg.domain.game.maplestorym.domain.GameCharacterSearchLog;
+import com.chang.omg.domain.game.maplestorym.domain.GameType;
+import com.chang.omg.domain.game.maplestorym.repository.GameCharacterSearchLogRepository;
 import com.chang.omg.infrastructure.api.maplestorym.MapleStoryMApi;
+import com.chang.omg.infrastructure.api.maplestorym.dto.Character;
+import com.chang.omg.infrastructure.api.maplestorym.dto.CharacterBasic;
+import com.chang.omg.infrastructure.api.maplestorym.dto.CharacterGuild;
+import com.chang.omg.infrastructure.api.maplestorym.dto.CharacterItemEquipment;
+import com.chang.omg.infrastructure.api.maplestorym.dto.CharacterStat;
 import com.chang.omg.presentation.game.dto.MapleStoryMCharacterInfoResponse;
 
 import lombok.RequiredArgsConstructor;
@@ -17,7 +21,9 @@ import lombok.RequiredArgsConstructor;
 public class GameService {
 
     private final MapleStoryMApi mapleStoryMApi;
+    private final GameCharacterSearchLogRepository gameCharacterSearchLogRepository;
 
+    @Transactional
     public MapleStoryMCharacterInfoResponse getMapleStoryMCharacterInfo(
             final String characterName,
             final String worldName
@@ -28,11 +34,23 @@ public class GameService {
         final CharacterStat characterStat = mapleStoryMApi.getCharacterStat(character.ocid());
         final CharacterGuild characterGuild = mapleStoryMApi.getCharacterGuild(character.ocid());
 
+        saveGameCharacterSearchLog(worldName, characterName);
+
         return MapleStoryMCharacterInfoResponse.of(
                 characterBasic,
                 characterItemEquipment,
                 characterStat,
                 characterGuild
         );
+    }
+
+    private void saveGameCharacterSearchLog(final String worldName, final String characterName) {
+        final GameCharacterSearchLog gameCharacterSearchLog = GameCharacterSearchLog.builder()
+                .gameType(GameType.MAPLESTORY_M)
+                .worldName(worldName)
+                .characterName(characterName)
+                .build();
+
+        gameCharacterSearchLogRepository.save(gameCharacterSearchLog);
     }
 }
