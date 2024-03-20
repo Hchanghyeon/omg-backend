@@ -14,6 +14,7 @@ public enum ApiExceptionCode implements ExceptionCode {
     API_BAD_REQUEST(BAD_REQUEST, "API-002", "요청 정보가 잘못되었습니다."),
     API_FORBIDDEN(FORBIDDEN, "API-003", "요청 권한이 없습니다."),
     API_TOO_MANY_REQUESTS(TOO_MANY_REQUESTS, "API_004", "요청이 너무 많습니다."),
+    API_GAME_TYPE_IS_INVALID(BAD_REQUEST, "API_005", "게임 타입이 유효하지 않습니다."),
     ;
 
     private final HttpStatus status;
