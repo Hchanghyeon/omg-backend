@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: ${LOCAL_MYSQL_URL}
+    username: ${LOCAL_MYSQL_USERNAME}
+    password: ${LOCAL_MYSQL_PASSWORD}
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+cors:
+  urls:
+    - http://localhost:3000
