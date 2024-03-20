@@ -1,3 +1,13 @@
+spring:
+  profiles:
+    default: local
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        query.in_clause_parameter_padding: true
 api:
   nexon:
     maplestorym:
@@ -9,7 +19,4 @@ api:
       item_api_uri: ${MAPLESTORYM_ITEM_API_URI}
       stat_api_uri: ${MAPLESTORYM_STAT_API_URI}
       guild_api_uri: ${MAPLESTORYM_GUILD_API_URI}
-cors:
-  urls:
-    - http://localhost:3000
-    - ${CLIENT_URL}
+
