@@ -1,4 +1,4 @@
-package com.chang.omg.domain.game.maplestorym;
+package com.chang.omg.infrastructure.api.maplestorym.dto;
 
 public record CharacterBasic(
         String characterName,
