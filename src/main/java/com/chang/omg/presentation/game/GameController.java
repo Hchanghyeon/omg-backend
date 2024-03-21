@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.chang.omg.application.game.GameService;
-import com.chang.omg.domains.game.maplestorym.domain.GameCharacterSearchRank;
-import com.chang.omg.domains.game.maplestorym.domain.GameType;
+import com.chang.omg.domains.game.domain.GameCharacterSearchRank;
+import com.chang.omg.domains.game.domain.GameType;
 import com.chang.omg.presentation.game.dto.MapleStoryMCharacterInfoResponse;
 
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.chang.omg.domains.game.maplestorym.domain;
+package com.chang.omg.domains.game.domain;
 
 import java.util.Collections;
 import java.util.Map;

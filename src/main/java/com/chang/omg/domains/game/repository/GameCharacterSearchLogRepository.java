@@ -1,13 +1,13 @@
-package com.chang.omg.domains.game.maplestorym.repository;
+package com.chang.omg.domains.game.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.chang.omg.domains.game.maplestorym.domain.GameCharacterSearchLog;
-import com.chang.omg.domains.game.maplestorym.domain.GameCharacterSearchRank;
-import com.chang.omg.domains.game.maplestorym.domain.GameType;
+import com.chang.omg.domains.game.domain.GameCharacterSearchLog;
+import com.chang.omg.domains.game.domain.GameCharacterSearchRank;
+import com.chang.omg.domains.game.domain.GameType;
 
 public interface GameCharacterSearchLogRepository extends JpaRepository<GameCharacterSearchLog, Long> {
 

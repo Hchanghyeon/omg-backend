@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.chang.omg.domains.game.maplestorym.domain.GameCharacterSearchLog;
-import com.chang.omg.domains.game.maplestorym.domain.GameCharacterSearchRank;
-import com.chang.omg.domains.game.maplestorym.domain.GameType;
-import com.chang.omg.domains.game.maplestorym.repository.GameCharacterSearchLogRepository;
+import com.chang.omg.domains.game.domain.GameCharacterSearchLog;
+import com.chang.omg.domains.game.domain.GameCharacterSearchRank;
+import com.chang.omg.domains.game.domain.GameType;
+import com.chang.omg.domains.game.repository.GameCharacterSearchLogRepository;
 import com.chang.omg.infrastructure.api.maplestorym.MapleStoryMApi;
 import com.chang.omg.infrastructure.api.maplestorym.dto.Character;
 import com.chang.omg.infrastructure.api.maplestorym.dto.CharacterBasic;
