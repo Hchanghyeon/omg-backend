@@ -1,12 +1,17 @@
 package com.chang.omg.presentation.game;
 
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.chang.omg.application.game.GameService;
+import com.chang.omg.domains.game.maplestorym.domain.GameCharacterSearchRank;
+import com.chang.omg.domains.game.maplestorym.domain.GameType;
 import com.chang.omg.presentation.game.dto.MapleStoryMCharacterInfoResponse;
 
 import lombok.RequiredArgsConstructor;
@@ -29,5 +34,11 @@ public class GameController {
         );
 
         return ResponseEntity.ok(mapleStoryMCharacterInfoResponse);
+    }
+
+    @GetMapping("/{gameType}/rank")
+    public ResponseEntity<List<GameCharacterSearchRank>> getGameCharacterSearchRank(
+            @PathVariable final GameType gameType) {
+        return ResponseEntity.ok(gameService.getGameCharacterSearchRank(gameType));
     }
 }

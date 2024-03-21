@@ -1,10 +1,12 @@
-package com.chang.omg.infrastructure.config;
+package com.chang.omg.global.config;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.chang.omg.infrastructure.config.property.CorsProperties;
+import com.chang.omg.global.config.property.CorsProperties;
+import com.chang.omg.global.converter.GameTypeFromPathVariableConverter;
 
 import lombok.RequiredArgsConstructor;
 
@@ -18,5 +20,10 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(final CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowedOrigins(corsProperties.getUrls());
+    }
+
+    @Override
+    public void addFormatters(final FormatterRegistry registry) {
+        registry.addConverter(new GameTypeFromPathVariableConverter());
     }
 }
