@@ -1,6 +1,6 @@
-package com.chang.omg.common.exception;
+package com.chang.omg.global.exception;
 
-import static com.chang.omg.common.exception.GlobalExceptionCode.*;
+import static com.chang.omg.global.exception.GlobalExceptionCode.*;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

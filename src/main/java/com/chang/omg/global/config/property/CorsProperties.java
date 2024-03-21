@@ -1,4 +1,4 @@
-package com.chang.omg.infrastructure.config.property;
+package com.chang.omg.global.config.property;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

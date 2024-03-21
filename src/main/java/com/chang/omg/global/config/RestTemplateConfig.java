@@ -1,4 +1,4 @@
-package com.chang.omg.infrastructure.config;
+package com.chang.omg.global.config;
 
 import static com.fasterxml.jackson.databind.PropertyNamingStrategies.*;
 
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
-import com.chang.omg.infrastructure.exception.RestTemplateResponseErrorHandler;
+import com.chang.omg.global.exception.RestTemplateResponseErrorHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Configuration

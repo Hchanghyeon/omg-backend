@@ -1,4 +1,4 @@
-package com.chang.omg.infrastructure.exception;
+package com.chang.omg.global.exception;
 
 import java.io.IOException;
 
@@ -6,9 +6,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.ResponseErrorHandler;
-
-import com.chang.omg.common.exception.ApiException;
-import com.chang.omg.common.exception.ApiExceptionCode;
 
 import lombok.extern.slf4j.Slf4j;
 
