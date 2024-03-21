@@ -1,9 +1,9 @@
-package com.chang.omg.domain.game.maplestorym.domain;
+package com.chang.omg.domains.game.maplestorym.domain;
 
 import java.util.Objects;
 
-import com.chang.omg.domain.game.common.domain.BaseEntity;
-import com.chang.omg.domain.game.maplestorym.repository.GameTypeConverter;
+import com.chang.omg.domains.common.domain.BaseEntity;
+import com.chang.omg.global.converter.GameTypeAttributeConverter;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
@@ -23,7 +23,7 @@ public class GameCharacterSearchLog extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Convert(converter = GameTypeConverter.class)
+    @Convert(converter = GameTypeAttributeConverter.class)
     @Column(name = "game_type", nullable = false)
     private GameType gameType;
 

@@ -1,12 +1,12 @@
-package com.chang.omg.domain.game.maplestorym.repository;
+package com.chang.omg.global.converter;
 
-import com.chang.omg.domain.game.maplestorym.domain.GameType;
+import com.chang.omg.domains.game.maplestorym.domain.GameType;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Convert;
 
 @Convert
-public final class GameTypeConverter implements AttributeConverter<GameType, String> {
+public final class GameTypeAttributeConverter implements AttributeConverter<GameType, String> {
 
     @Override
     public String convertToDatabaseColumn(final GameType gameType) {
