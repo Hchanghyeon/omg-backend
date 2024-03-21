@@ -1,11 +1,14 @@
 package com.chang.omg.application.game;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.chang.omg.domain.game.maplestorym.domain.GameCharacterSearchLog;
-import com.chang.omg.domain.game.maplestorym.domain.GameType;
-import com.chang.omg.domain.game.maplestorym.repository.GameCharacterSearchLogRepository;
+import com.chang.omg.domains.game.maplestorym.domain.GameCharacterSearchLog;
+import com.chang.omg.domains.game.maplestorym.domain.GameCharacterSearchRank;
+import com.chang.omg.domains.game.maplestorym.domain.GameType;
+import com.chang.omg.domains.game.maplestorym.repository.GameCharacterSearchLogRepository;
 import com.chang.omg.infrastructure.api.maplestorym.MapleStoryMApi;
 import com.chang.omg.infrastructure.api.maplestorym.dto.Character;
 import com.chang.omg.infrastructure.api.maplestorym.dto.CharacterBasic;
@@ -18,12 +21,12 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class GameService {
 
     private final MapleStoryMApi mapleStoryMApi;
     private final GameCharacterSearchLogRepository gameCharacterSearchLogRepository;
 
-    @Transactional
     public MapleStoryMCharacterInfoResponse getMapleStoryMCharacterInfo(
             final String characterName,
             final String worldName
@@ -46,11 +49,16 @@ public class GameService {
 
     private void saveGameCharacterSearchLog(final String worldName, final String characterName) {
         final GameCharacterSearchLog gameCharacterSearchLog = GameCharacterSearchLog.builder()
-                .gameType(GameType.MAPLESTORY_M)
+                .gameType(GameType.MAPLESTORYM)
                 .worldName(worldName)
                 .characterName(characterName)
                 .build();
 
         gameCharacterSearchLogRepository.save(gameCharacterSearchLog);
+    }
+
+    @Transactional(readOnly = true)
+    public List<GameCharacterSearchRank> getGameCharacterSearchRank(final GameType gameType) {
+        return gameCharacterSearchLogRepository.findGameCharacterSearchRank(gameType);
     }
 }
