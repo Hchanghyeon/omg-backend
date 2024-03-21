@@ -1,4 +1,4 @@
-package com.chang.omg.domain.game.common.config;
+package com.chang.omg.global.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;

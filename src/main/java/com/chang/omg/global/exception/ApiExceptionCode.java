@@ -1,4 +1,4 @@
-package com.chang.omg.common.exception;
+package com.chang.omg.global.exception;
 
 import static org.springframework.http.HttpStatus.*;
 
