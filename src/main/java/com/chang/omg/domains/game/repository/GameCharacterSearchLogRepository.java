@@ -12,7 +12,7 @@ import com.chang.omg.domains.game.domain.GameType;
 public interface GameCharacterSearchLogRepository extends JpaRepository<GameCharacterSearchLog, Long> {
 
     @Query("""
-            SELECT new com.chang.omg.domains.game.maplestorym.domain.GameCharacterSearchRank
+            SELECT new com.chang.omg.domains.game.domain.GameCharacterSearchRank
             (g.worldName, g.characterName, COUNT(g.characterName))
             FROM GameCharacterSearchLog g 
             WHERE g.createdAt > CURRENT_DATE AND g.gameType =:gameType
