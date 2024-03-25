@@ -26,7 +26,9 @@
 - 회원들이 이용할 수 있는 게시판 기능
 
 ## 운영
-### 2024.3.25 - 정식 서비스 전 피드백 받기 위한 1차 배포(개인 NAS 서버를 통한 배포)
+<details>
+ <summary>2024.3.25 - 정식 서비스 전 피드백 받기 위한 1차 배포(개인 NAS 서버를 통한 배포)</summary>
+
 ![image](https://github.com/Hchanghyeon/omg-backend/assets/92444744/df520733-4180-4128-8093-ff4436585288)
 ![image](https://github.com/Hchanghyeon/omg-backend/assets/92444744/a5216f56-3444-4dea-b98e-cf478b61ffa4)
 - 해당 게임을 하는 사용자들에게 직접적인 피드백을 위해, 오픈 카카오톡방 커뮤니티와 넥슨 공식 홈페이지 커뮤니티에 홍보
@@ -36,3 +38,5 @@
 
 ![image](https://github.com/Hchanghyeon/omg-backend/assets/92444744/afc10694-5310-4138-9ab5-d8ef59b56bc8)
 - 많은 인원에게 받은 설문조사는 아니지만, 커뮤니티 또는 오픈 카카오톡방 커뮤니티를 통해 받은 응답으로는 만든 서비스가 긍정적인 것으로 보여서 추가적으로 기능 개발 후 정식 배포 예정
+</details>
+
